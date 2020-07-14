@@ -13,10 +13,13 @@ namespace StudentProject
         {
 
         }
-        public Lecturer(string academicTitle, string position)
+        public Lecturer(string forname, string name, string birthDate, string academicTitle, string position)
         {
             this._academicTitle = academicTitle;
             this._position = position;
+            base._forName = forname;
+            base._name = name;
+            base._birthdayDate = birthDate;
         }
         public new void DisplayInfo()
         {

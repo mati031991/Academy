@@ -7,9 +7,9 @@ namespace StudentProject
 {
     public class Person : IInfo
     {
-        protected string _forName { get; private set; } = "";
-        protected string _name { get; private set; } = "";
-        protected string _birthdayDate { get; private set; } = "";
+        protected string _forName { get; set; } = "";
+        protected string _name { get; set; } = "";
+        protected string _birthdayDate { get; set; } = "";
 
         public Person()
         {
