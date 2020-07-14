@@ -53,7 +53,14 @@ namespace StudentProject
                 return false;
             }
         }
-
+        public void DisplayInfoByLecturers()
+        {
+            Console.WriteLine("Lista wykładowców: ");
+            foreach (var item in lecturers)
+            {
+                item.DisplayInfo();
+            }
+        }
         public void DisplayInfo()
         {
             Console.WriteLine("Nazwa jednostki : {0} , Adres jednostki: {1}", this.GetForceName(), this.GetForceAddress());
