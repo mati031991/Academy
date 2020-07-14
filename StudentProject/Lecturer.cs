@@ -4,7 +4,7 @@ using System.Text;
 
 namespace StudentProject
 {
-    public class Lecturer
+    public class Lecturer : Person
     {
         private string _academicTitle = "";
         private string _position = "";
@@ -18,9 +18,10 @@ namespace StudentProject
             this._academicTitle = academicTitle;
             this._position = position;
         }
-        public void DisplayInfo()
+        public new void DisplayInfo()
         {
             Console.WriteLine("Tytuł: {0} Stanowisko: {1}", this._academicTitle, this._position);
+            base.DisplayInfo();
         }
     }
 }
