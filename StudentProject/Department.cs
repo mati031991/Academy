@@ -6,17 +6,22 @@ namespace StudentProject
 {
     public class Department
     {
-        public List<Force> Force { get; set; }
+        public List<Force> Forces { get; set; }
         public List<Student> Students { get; set; }
         public List<Subject> Subjects { get; set; }
 
+        public Department()
+        {
+            Forces = new List<Force>();
+            Subjects = new List<Subject>();
+        }
         public void AddForce(string name, string address)
         {
-
+            Forces.Add(new Force(name, address));
         }
         public void AddSubject(Subject subject)
         {
-
+            Subjects.Add(new Subject(subject));
         }
         public void AddStudent(Student student)
         {
