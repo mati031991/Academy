@@ -6,6 +6,10 @@ namespace StudentProject
 {
     public class Department
     {
+        public List<Force> Force { get; set; }
+        public List<Student> Students { get; set; }
+        public List<Subject> Subjects { get; set; }
+
         public void AddForce(string name, string address)
         {
 

@@ -11,6 +11,7 @@ namespace StudentProject
         private int _year = 0;
         private int _group = 0;
         private int _index = 0;
+        public List<FinalRating> FinalRatings { get; set; }
 
         public Student() : base()
         {

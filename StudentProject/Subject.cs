@@ -10,6 +10,8 @@ namespace StudentProject
         private string _sesion = "";
         private int _amountHour = 0;
 
+        public FinalRating FinalRating { get; set; }
+
         public Subject(string name, string direction, string speciality, string sesion, int amountHour)
         {
             this._name = name;
