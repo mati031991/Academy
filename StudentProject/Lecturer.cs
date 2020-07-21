@@ -21,6 +21,16 @@ namespace StudentProject
             base._name = name;
             base._birthdayDate = birthDate;
         }
+        public string GetAcademicTitle()
+        {
+            return _academicTitle;
+        }
+
+        public string GetPosition()
+        {
+            return _position;
+        }
+
         public new void DisplayInfo()
         {
             Console.WriteLine("Tytuł: {0} Stanowisko: {1}", this._academicTitle, this._position);

@@ -7,7 +7,7 @@ namespace StudentProject
     {
         private string _name = "";
         private string _address = "";
-        private List<Lecturer> lecturers;
+        public List<Lecturer> Lecturers { get; private set; }
 
         public Force(string name, string address)
         {

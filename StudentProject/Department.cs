@@ -1,6 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
+﻿using System.Collections.Generic;
 
 namespace StudentProject
 {
@@ -25,11 +23,39 @@ namespace StudentProject
         }
         public void AddStudent(Student student)
         {
-
+            Students.Add(student);
         }
         public bool AddLecturer(Lecturer lecturer, string departmentName)
         {
-            return true;
+            bool result = true;
+
+            new Lecturer(lecturer.GetForname(), lecturer.GetName(), lecturer.GetBirthdayDate(), lecturer.GetAcademicTitle(), lecturer.GetPosition());
+            foreach (var item in Forces)
+            {
+                if (item.GetForceName() == departmentName)
+                {
+                    foreach (var lect in item.Lecturers)
+                    {
+                        if (lect.Equals(lecturer))
+                        {
+                            result = false;
+                        }
+                        else
+                        {
+                            item.AddLecturer(lecturer);
+                            result = true;
+                        }
+                    }
+                }
+                else
+                {
+                    Force force = new Force(departmentName, null);
+                    Forces.Add(force);
+                    force.AddLecturer(lecturer);
+                    result = true;
+                }
+            }
+            return result;
         }
         public void StudentsInfo(bool infoRating)
         {
