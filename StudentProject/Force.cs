@@ -13,17 +13,17 @@ namespace StudentProject
         {
             _name = name;
             _address = address;
-            lecturers = new List<Lecturer>();
+            Lecturers = new List<Lecturer>();
         }
         public void AddLecturer(Lecturer lecturer)
         {
-            lecturers.Add(lecturer);
+            Lecturers.Add(lecturer);
         }
         public bool DeleteLecturer(Lecturer lecturer)
         {
-            if (lecturers.Contains(lecturer))
+            if (Lecturers.Contains(lecturer))
             {
-                lecturers.Remove(lecturer);
+                Lecturers.Remove(lecturer);
                 return true;
             }
             else
@@ -41,10 +41,10 @@ namespace StudentProject
         }
         public bool DeleteLecturer(string forname, string name)
         {
-            Lecturer actLecturer = lecturers.Find(x => x.GetForname() == forname && x.GetName() == name);
+            Lecturer actLecturer = Lecturers.Find(x => x.GetForname() == forname && x.GetName() == name);
             if (actLecturer != null)
             {
-                lecturers.Remove(actLecturer);
+                Lecturers.Remove(actLecturer);
                 return true;
             }
             else
@@ -55,7 +55,7 @@ namespace StudentProject
         public void DisplayInfoByLecturers()
         {
             Console.WriteLine("Lista wykładowców: ");
-            foreach (var item in lecturers)
+            foreach (var item in Lecturers)
             {
                 item.DisplayInfo();
             }
