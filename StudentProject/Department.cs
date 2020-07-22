@@ -1,4 +1,6 @@
 ﻿using System.Collections.Generic;
+using System.ComponentModel;
+using System.IO.IsolatedStorage;
 
 namespace StudentProject
 {
@@ -59,15 +61,45 @@ namespace StudentProject
         }
         public void StudentsInfo(bool infoRating)
         {
-
+            if (infoRating)
+            {
+                foreach (var item in Students)
+                {
+                    item.Displayinfo();
+                    System.Console.WriteLine(item.FinalRatings);
+                }
+            }
+            else
+            {
+                foreach (var item in Students)
+                {
+                    item.Displayinfo();
+                }
+            }
         }
         public void ForcesInfo(bool infoLecturer)
         {
+            foreach (var item in Forces)
+            {
+                if (infoLecturer)
+                {
+                    item.DisplayInfo();
+                    System.Console.WriteLine(item.Lecturers);
 
+                }
+                else
+                {
+                    item.DisplayInfo();
+                }
+
+            }
         }
         public void InfoSubject()
         {
-
+            foreach (var item in Subjects)
+            {
+                item.DisplayInfo();
+            }
         }
         public bool AddRating(int nrIndex, string subjctName, int rating, string date)
         {
@@ -75,7 +107,16 @@ namespace StudentProject
         }
         public bool RemoveStudent(int nrIndex)
         {
-            return true;
+            bool status = false;
+            foreach (var item in Students)
+            {
+                if (item.GetIndex() == nrIndex)
+                {
+                    Students.Remove(item);
+                    status = true;
+                }
+            }
+            return status;
         }
         public bool BringingLecturer(Lecturer lecturer, string currentDepartment, string newDepartmant)
         {
